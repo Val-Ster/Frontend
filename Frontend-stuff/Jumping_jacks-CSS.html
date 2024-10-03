@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumping Jack Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .person {
+            position: relative;
+            width: 50px;
+            height: 150px;
+        }
+        .head {
+            width: 40px;
+            height: 40px;
+            background-color: #ffcc00;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 5px;
+        }
+        .torso {
+            width: 20px;
+            height: 60px;
+            background-color: #3498db;
+            position: absolute;
+            top: 40px;
+            left: 15px;
+        }
+        .arm {
+            width: 10px;
+            height: 50px;
+            background-color: #e74c3c;
+            position: absolute;
+            top: 40px;
+            animation: jump 1s infinite;
+        }
+        .left-arm {
+            left: -10px;
+            transform-origin: top;
+        }
+        .right-arm {
+            right: -10px;
+            transform-origin: top;
+        }
+        .leg {
+            width: 10px;
+            height: 50px;
+            background-color: #2ecc71;
+            position: absolute;
+            top: 100px;
+        }
+        .left-leg {
+            left: 5px;
+            animation: jump 1s infinite;
+        }
+        .right-leg {
+            right: 5px;
+            animation: jump 1s infinite;
+        }
+
+        @keyframes jump {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Arm movement to simulate jumping jacks */
+        .left-arm {
+            animation: jump-arms 1s infinite;
+        }
+        .right-arm {
+            animation: jump-arms 1s infinite;
+        }
+
+        @keyframes jump-arms {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="person">
+        <div class="head"></div>
+        <div class="torso"></div>
+        <div class="arm left-arm"></div>
+        <div class="arm right-arm"></div>
+        <div class="leg left-leg"></div>
+        <div class="leg right-leg"></div>
+    </div>
+</body>
+</html>
